@@ -1,7 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Xn7-CD-1Gn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Weather App-->
+        <scene sceneID="HAG-Vr-QPR">
+            <objects>
+                <viewController id="FKY-8v-bkl" customClass="WeatherViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RlP-SW-09E"/>
+                        <viewControllerLayoutGuide type="bottom" id="bj2-S6-eNg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wpn-dz-k8v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umq-5n-Fl5">
+                                <rect key="frame" x="20" y="108" width="560" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="1sb-8z-FOE"/>
+                                    <constraint firstAttribute="width" secondItem="umq-5n-Fl5" secondAttribute="height" multiplier="560:57" id="MTp-Vb-FMw"/>
+                                    <constraint firstAttribute="height" constant="57" id="Oqq-dY-a67"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqY-5f-gzz">
+                                <rect key="frame" x="20" y="173" width="560" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="560" id="Vrm-AV-gOH"/>
+                                    <constraint firstAttribute="height" constant="43" id="nRg-dO-NcA"/>
+                                    <constraint firstAttribute="width" secondItem="JqY-5f-gzz" secondAttribute="height" multiplier="560:43" id="xHh-Bj-SWD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UIo-3B-LbN">
+                                <rect key="frame" x="183" y="224" width="234" height="234"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="RSy-6o-lwc"/>
+                                    <constraint firstAttribute="height" constant="234" id="tvr-QL-ge0"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-Ek-ngX">
+                                <rect key="frame" x="183" y="466" width="234" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="mRN-Cd-5Wg">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ty9-o3-ZbY"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cNt-Ek-ngX" firstAttribute="top" secondItem="UIo-3B-LbN" secondAttribute="bottom" constant="8" id="4Fx-bn-wqS"/>
+                            <constraint firstItem="mRN-Cd-5Wg" firstAttribute="leading" secondItem="Wpn-dz-k8v" secondAttribute="leadingMargin" constant="-20" id="4Zo-jF-wF3"/>
+                            <constraint firstItem="UIo-3B-LbN" firstAttribute="leading" secondItem="Wpn-dz-k8v" secondAttribute="leadingMargin" constant="163" id="8Aa-5X-HDx"/>
+                            <constraint firstItem="mRN-Cd-5Wg" firstAttribute="top" secondItem="RlP-SW-09E" secondAttribute="bottom" id="933-N2-VMS"/>
+                            <constraint firstItem="JqY-5f-gzz" firstAttribute="top" secondItem="umq-5n-Fl5" secondAttribute="bottom" constant="8" id="HyB-PX-biQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cNt-Ek-ngX" secondAttribute="trailing" constant="163" id="I41-vv-f1z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mRN-Cd-5Wg" secondAttribute="trailing" constant="-20" id="Mpf-PP-sRR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UIo-3B-LbN" secondAttribute="trailing" constant="163" id="Qld-T7-0cX"/>
+                            <constraint firstItem="cNt-Ek-ngX" firstAttribute="leading" secondItem="Wpn-dz-k8v" secondAttribute="leadingMargin" constant="163" id="QyB-XO-8yp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="umq-5n-Fl5" secondAttribute="trailing" id="Sm9-S4-2Xq"/>
+                            <constraint firstItem="UIo-3B-LbN" firstAttribute="width" secondItem="cNt-Ek-ngX" secondAttribute="width" id="XI7-hY-q6a"/>
+                            <constraint firstItem="bj2-S6-eNg" firstAttribute="top" secondItem="cNt-Ek-ngX" secondAttribute="bottom" constant="113" id="Yco-4S-sci"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JqY-5f-gzz" secondAttribute="trailing" id="ZmK-uC-hEh"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="JqY-5f-gzz" secondAttribute="leading" id="b8T-WQ-cQv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="umq-5n-Fl5" secondAttribute="leading" id="oOC-5h-m7H"/>
+                            <constraint firstItem="UIo-3B-LbN" firstAttribute="top" secondItem="JqY-5f-gzz" secondAttribute="bottom" constant="8" id="wI5-Ac-F6k"/>
+                            <constraint firstItem="umq-5n-Fl5" firstAttribute="top" secondItem="mRN-Cd-5Wg" secondAttribute="bottom" id="ymC-gk-fCn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Weather App" id="8Zz-6u-rZQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zdd-uZ-nCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1391" y="530"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="29c-kb-BBe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xn7-CD-1Gn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="riI-tM-TBa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FKY-8v-bkl" kind="relationship" relationship="rootViewController" id="6Fg-3Q-wec"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ua1-uE-6np" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="579" y="468"/>
+        </scene>
+    </scenes>
 </document>
