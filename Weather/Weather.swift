@@ -45,7 +45,7 @@ class Weather {
             let main = weatherArray[0][kMain] as? String,
             let description = weatherArray[0][kDescription] as? String,
             let iconString = weatherArray[0][kIconString] as? String,
-            let temperatureK = mainDictionary[kMain] as? Float,
+            let temperatureK = mainDictionary[kTemperatureK] as? Float,
             let cityName = jsonDictionary[kCityName] as? String else {
                 return nil
         }

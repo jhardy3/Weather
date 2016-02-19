@@ -48,8 +48,8 @@
                                     <constraint firstAttribute="height" constant="234" id="tvr-QL-ge0"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-Ek-ngX">
-                                <rect key="frame" x="183" y="466" width="234" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNt-Ek-ngX">
+                                <rect key="frame" x="20" y="466" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -60,6 +60,9 @@
                                     <constraint firstAttribute="height" constant="44" id="Ty9-o3-ZbY"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="FKY-8v-bkl" id="tCo-Tt-Z1X"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -69,12 +72,13 @@
                             <constraint firstItem="UIo-3B-LbN" firstAttribute="leading" secondItem="Wpn-dz-k8v" secondAttribute="leadingMargin" constant="163" id="8Aa-5X-HDx"/>
                             <constraint firstItem="mRN-Cd-5Wg" firstAttribute="top" secondItem="RlP-SW-09E" secondAttribute="bottom" id="933-N2-VMS"/>
                             <constraint firstItem="JqY-5f-gzz" firstAttribute="top" secondItem="umq-5n-Fl5" secondAttribute="bottom" constant="8" id="HyB-PX-biQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cNt-Ek-ngX" secondAttribute="trailing" constant="163" id="I41-vv-f1z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cNt-Ek-ngX" secondAttribute="trailing" id="I41-vv-f1z"/>
+                            <constraint firstItem="umq-5n-Fl5" firstAttribute="top" secondItem="RlP-SW-09E" secondAttribute="bottom" constant="44" id="JPb-w6-vRj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mRN-Cd-5Wg" secondAttribute="trailing" constant="-20" id="Mpf-PP-sRR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UIo-3B-LbN" secondAttribute="trailing" constant="163" id="Qld-T7-0cX"/>
-                            <constraint firstItem="cNt-Ek-ngX" firstAttribute="leading" secondItem="Wpn-dz-k8v" secondAttribute="leadingMargin" constant="163" id="QyB-XO-8yp"/>
+                            <constraint firstItem="cNt-Ek-ngX" firstAttribute="leading" secondItem="Wpn-dz-k8v" secondAttribute="leadingMargin" id="QyB-XO-8yp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="umq-5n-Fl5" secondAttribute="trailing" id="Sm9-S4-2Xq"/>
-                            <constraint firstItem="UIo-3B-LbN" firstAttribute="width" secondItem="cNt-Ek-ngX" secondAttribute="width" id="XI7-hY-q6a"/>
+                            <constraint firstItem="UIo-3B-LbN" firstAttribute="width" secondItem="cNt-Ek-ngX" secondAttribute="width" constant="-326" id="XI7-hY-q6a"/>
                             <constraint firstItem="bj2-S6-eNg" firstAttribute="top" secondItem="cNt-Ek-ngX" secondAttribute="bottom" constant="113" id="Yco-4S-sci"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JqY-5f-gzz" secondAttribute="trailing" id="ZmK-uC-hEh"/>
                             <constraint firstAttribute="leadingMargin" secondItem="JqY-5f-gzz" secondAttribute="leading" id="b8T-WQ-cQv"/>
@@ -84,6 +88,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weather App" id="8Zz-6u-rZQ"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="umq-5n-Fl5" id="2lN-8s-Oe9"/>
+                        <outlet property="mainLabel" destination="cNt-Ek-ngX" id="K5H-EJ-lzx"/>
+                        <outlet property="temperatureLabel" destination="JqY-5f-gzz" id="Z1f-mu-aHe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdd-uZ-nCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

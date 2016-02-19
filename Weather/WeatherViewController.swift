@@ -9,11 +9,21 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    // MARK: - Outlet Properties
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var mainLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +31,31 @@ class WeatherViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateWith(weather: Weather?) {
+        guard let weather = weather, let temp = weather.temperatureC else { return }
+        cityLabel.text = weather.cityName
+        temperatureLabel.text = String(temp)
+        mainLabel.text = weather.main
     }
-    */
+    
+}
 
+
+extension WeatherViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        guard let text = searchBar.text else {
+            return
+        }
+        WeatherController.getWeather(text) { (weather) -> Void in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.updateWith(weather)
+            })
+        }
+
+        
+    }
+    
+    
 }
